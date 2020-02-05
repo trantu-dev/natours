@@ -15,6 +15,7 @@ const reviewRouter = require('./routers/reviewRouter');
 const viewRouter = require('./routers/viewRouter');
 const bookingRouter = require('./routers/bookingRouter');
 
+// START APP
 const app = express();
 
 // SETUP PUG
