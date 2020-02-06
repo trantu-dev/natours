@@ -7,6 +7,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
+const cors = require('cors');
 
 const AppError = require('./utils/appError');
 const glogalErrorHandler = require('./controllers/errorController');
@@ -22,6 +23,10 @@ const app = express();
 // SETUP PUG
 app.set('view engine', 'pug');
 app.set('views', `${__dirname}/views`);
+
+app.use(cors());
+
+app.options('*', cors());
 
 // STATIC FILE
 app.use(express.static(`${__dirname}/public`));
